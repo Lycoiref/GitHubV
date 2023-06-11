@@ -1,0 +1,18 @@
+{
+  "name": "server",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "为GitHub数据可视化项目提供后端支持",
+  "main": "index.js",
+  "author": "Lycoiref",
+  "license": "MIT",
+  "dependencies": {
+    "@koa/cors": "^4.0.0",
+    "@koa/router": "^12.0.0",
+    "csv-parser": "^3.0.0",
+    "koa": "^2.14.2"
+  },
+  "scripts": {
+    "dev": "nodemon index.js"
+  }
+}
