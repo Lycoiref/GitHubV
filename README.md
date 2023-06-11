@@ -1,7 +1,18 @@
-# Vue 3 + Vite
+# What's The Most Popular Programming Language?
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+对2011-2022期间的GitHub数据分析与可视化
 
-## Recommended IDE Setup
+## 数据集来源
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [Google Dataset Search](https://datasetsearch.research.google.com/)
+- [Kaggle](https://www.kaggle.com/datasets/isaacwen/github-programming-languages-data?resource=download&select=issues.csv)
+
+## How To Use?
+本项目基于Vue3,Echarts以及Koa开发，若您已有Node环境，你可以通过下面的步骤轻松接入项目：
+```bash
+# 克隆项目
+git clone https://github.com/Lycoiref/GitHubV.git
+cd GitHubV
+yarn && cd ./server && yarn # 安装依赖
+yarn start # 启动项目
+``` 
