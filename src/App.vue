@@ -1,15 +1,18 @@
 <template>
     <div class="page">
         <div class="top-bar">
-            <div class="item" :class="itemActive === 'global' ? 'item-active' : ''" @click="itemActive = 'global'">Global</div>
-            <div class="item" :class="itemActive === 'single' ? 'item-active' : ''" @click="itemActive = 'single'">Single</div>
-            <div class="item" :class="itemActive === 'list' ? 'item-active' : ''" @click="itemActive = 'list'">Language List</div>
+            <div class="item" :class="itemActive === 'global' ? 'item-active' : ''" @click="itemActive = 'global'">Global
+            </div>
+            <div class="item" :class="itemActive === 'single' ? 'item-active' : ''" @click="itemActive = 'single'">Single
+            </div>
+            <div class="item" :class="itemActive === 'list' ? 'item-active' : ''" @click="itemActive = 'list'">Language List
+            </div>
         </div>
         <div v-if="itemActive === 'global'" class="body">
-
+            <GlobalPage />
         </div>
         <div v-if="itemActive === 'single'" class="body">
-            second
+            <SinglePage />
         </div>
         <div v-if="itemActive === 'list'" class="body">
             <Suspense>
@@ -21,12 +24,13 @@
 
 <script setup>
 import LanguageList from './components/LanguageList.vue'
+import GlobalPage from './components/GlobalPage.vue'
+import SinglePage from './components/SinglePage.vue'
+import * as echarts from 'echarts'
 import axios from 'axios'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const itemActive = ref('global')
-
-
 // const test = ref('')
 // test.value = await axios.get('http://127.0.0.1:3000/')
 // console.log(test.value);
@@ -48,15 +52,16 @@ const itemActive = ref('global')
         align-items: center;
         font-weight: 100;
         color: #ccc;
-        
+
         .item {
             margin: 0 20px;
             cursor: pointer;
             user-select: none;
-            
+
             &.item-active {
                 color: #ff3f3f;
             }
+
             transition: all 0.3s ease-in-out;
         }
     }
