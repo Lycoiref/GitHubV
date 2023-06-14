@@ -13,6 +13,6 @@
 # 克隆项目
 git clone https://github.com/Lycoiref/GitHubV.git
 cd GitHubV
-yarn && cd ./server && yarn # 安装依赖
+yarn && cd ./server && yarn && cd .. # 安装依赖
 yarn start # 启动项目
 ``` 
